@@ -2,5 +2,10 @@
   "name": "imurmurhash-esm",
   "version": "0.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "imurmurhash": "^0.1.4",
+    "prettier": "^3.8.3"
+  }
 }
