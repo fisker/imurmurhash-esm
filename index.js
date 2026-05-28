@@ -1,28 +1,4 @@
-/**
- * @preserve
- * JS Implementation of incremental MurmurHash3 (r150) (as of May 10, 2013)
- *
- * @author <a href="mailto:jensyt@gmail.com">Jens Taylor</a>
- * @see http://github.com/homebrewing/brauhaus-diff
- * @author <a href="mailto:gary.court@gmail.com">Gary Court</a>
- * @see http://github.com/garycourt/murmurhash-js
- * @author <a href="mailto:aappleby@gmail.com">Austin Appleby</a>
- * @see http://sites.google.com/site/murmurhash/
- */
-
 class MurmurHash3Internal {
-  /**
-  @param {string} key A UTF-16 or ASCII string
-  @param {number} seed An optional positive integer
-  @return {object} A MurmurHash3 object for incremental hashing
-  */
-  constructor(key, seed) {
-    this.reset(seed);
-    if (typeof key === "string" && key.length > 0) {
-      this.hash(key);
-    }
-  }
-
   /**
   Get the result of this hash
 
@@ -135,22 +111,23 @@ let cache;
 
 // Call this function without `new` to use the cached object (good for
 // single-threaded environments), or with `new` to create a new object.
+
+/**
+@param {string} key A UTF-16 or ASCII string
+@param {number} seed An optional positive integer
+@return {MurmurHash3Internal} A MurmurHash3 object for incremental hashing
+*/
 function MurmurHash3(key, seed) {
-  let m;
+  let murmurHash3 = new.target
+    ? new MurmurHash3Internal()
+    : (cache ??= new MurmurHash3Internal());
 
-  if (this instanceof MurmurHash3) {
-    m = new MurmurHash3Internal(key, seed);
-  } else {
-    cache ??= new MurmurHash3Internal();
-    m = cache;
-  }
-
-  m.reset(seed);
+  murmurHash3.reset(seed);
   if (typeof key === "string" && key.length > 0) {
-    m.hash(key);
+    murmurHash3.hash(key);
   }
 
-  return m;
+  return murmurHash3;
 }
 
 export default MurmurHash3;
