@@ -11,7 +11,7 @@
 
 > An incremental implementation of MurmurHash3 for JavaScript.
 
-ESM(ES modules) version of NPM package [imurmurhash](https://www.npmjs.com/package/imurmurhash) in.
+ESM(ES modules) version of NPM package [imurmurhash](https://www.npmjs.com/package/imurmurhash).
 
 ## Install
 
