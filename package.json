@@ -2,7 +2,6 @@
   "name": "imurmurhash-esm",
   "version": "0.0.0",
   "description": "An incremental implementation of MurmurHash3 for JavaScript.",
-
   "homepage": "https://github.com/fisker/imurmurhash-esm#readme",
   "bugs": {
     "url": "https://github.com/fisker/imurmurhash-esm/issues"
@@ -26,6 +25,7 @@
     "test": "node --test"
   },
   "devDependencies": {
+    "@fisker/release-it-config": "6.0.2",
     "imurmurhash": "0.1.4",
     "release-it": "20.2.0"
   },
