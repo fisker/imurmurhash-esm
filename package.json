@@ -1,6 +1,6 @@
 {
   "name": "imurmurhash-esm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An incremental implementation of MurmurHash3 for JavaScript.",
   "homepage": "https://github.com/fisker/imurmurhash-esm#readme",
   "bugs": {
