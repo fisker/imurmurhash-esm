@@ -10,6 +10,8 @@
  * @see http://sites.google.com/site/murmurhash/
  */
 
+// A cached object to use. This can be safely used if you're in a single-
+// threaded environment, otherwise you need to create new hashes to use.
 var cache;
 
 // Call this function without `new` to use the cached object (good for
@@ -19,8 +21,16 @@ var cache;
 // @param {number} seed An optional positive integer
 // @return {object} A MurmurHash3 object for incremental hashing
 function MurmurHash3(key, seed) {
-    var m = this instanceof MurmurHash3 ? this : cache;
-    m.reset(seed)
+    var m = this;
+
+    if (!(this instanceof MurmurHash3)) {
+        if (!cache) {
+            cache ??= new MurmurHash3();
+        }
+        m = cache;
+    }
+
+    m.reset(seed);
     if (typeof key === 'string' && key.length > 0) {
         m.hash(key);
     }
@@ -125,9 +135,5 @@ MurmurHash3.prototype.reset = function(seed) {
     this.rem = this.k1 = this.len = 0;
     return this;
 };
-
-// A cached object to use. This can be safely used if you're in a single-
-// threaded environment, otherwise you need to create new hashes to use.
-cache = new MurmurHash3();
 
 export default MurmurHash3
