@@ -105,7 +105,7 @@ MurmurHash3.prototype.hash = function(key) {
 // @return {number} The 32-bit hash
 MurmurHash3.prototype.result = function() {
     var k1, h1;
-    
+
     k1 = this.k1;
     h1 = this.h1;
 
@@ -136,4 +136,4 @@ MurmurHash3.prototype.reset = function(seed) {
     return this;
 };
 
-export default MurmurHash3
+export default MurmurHash3;
