@@ -23,17 +23,9 @@
     "index.d.ts"
   ],
   "scripts": {
-    "test": "node --test",
-    "test-coverage": "yarn c8 test"
-  },
-  "c8": {
-    "reporter": [
-      "lcov",
-      "text"
-    ]
+    "test": "node --test"
   },
   "devDependencies": {
-    "c8": "11.0.0",
     "imurmurhash": "0.1.4",
     "release-it": "20.2.0"
   },
