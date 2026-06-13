@@ -22,7 +22,8 @@
     "index.d.ts"
   ],
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "release": "release-it"
   },
   "devDependencies": {
     "@fisker/release-it-config": "6.0.2",
