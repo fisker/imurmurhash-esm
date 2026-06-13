@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "imurmurhash": "^0.1.4",
-    "prettier": "^3.8.3"
-  }
+    "imurmurhash": "^0.1.4"
+  },
+  "scripts": {"test":"node --test"}
 }
