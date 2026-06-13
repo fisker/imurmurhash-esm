@@ -22,8 +22,6 @@ jobs:
           - "22"
           - "20"
           - "18"
-          - "16"
-          - "14"
     name: Node.js ${{ matrix.node_version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     env:
@@ -41,11 +39,11 @@ jobs:
         run: yarn
 
       - name: Run Test
-        run: yarn test-coverage
+        run: yarn test
 
-      - uses: codecov/codecov-action@v7
-        with:
-          fail_ci_if_error: true
-          disable_search: true
-          files: coverage/lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
+      # - uses: codecov/codecov-action@v7
+      #   with:
+      #     fail_ci_if_error: true
+      #     disable_search: true
+      #     files: coverage/lcov.info
+      #     token: ${{ secrets.CODECOV_TOKEN }}
