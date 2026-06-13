@@ -1,11 +1,45 @@
 {
   "name": "imurmurhash-esm",
   "version": "0.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "type": "module",
-  "devDependencies": {
-    "imurmurhash": "^0.1.4"
+  "description": "An incremental implementation of MurmurHash3 for JavaScript.",
+
+  "homepage": "https://github.com/fisker/imurmurhash-esm#readme",
+  "bugs": {
+    "url": "https://github.com/fisker/imurmurhash-esm/issues"
   },
-  "scripts": {"test":"node --test"}
+  "repository": "fisker/imurmurhash-esm",
+  "funding": "https://github.com/fisker/imurmurhash-esm?sponsor=1",
+  "license": "MIT",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://www.fiskercheung.com/"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./index.js",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "test-coverage": "yarn c8 test"
+  },
+  "c8": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "devDependencies": {
+    "c8": "11.0.0",
+    "imurmurhash": "0.1.4",
+    "release-it": "20.2.0"
+  },
+  "packageManager": "yarn@4.16.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

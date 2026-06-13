@@ -1,0 +1,3 @@
+{
+  extends: ["github>fisker/shared-configs//packages/renovate-config/default"],
+}
